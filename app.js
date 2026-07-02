@@ -351,8 +351,6 @@ function render() {
   renderModelGrid();
   renderShoes();
   renderResult();
-  // 嵌入情境：畫面更新後立即回報高度給父層 iframe。
-  if (window.__dkEmbedPing) window.__dkEmbedPing();
 }
 
 function pickRandom(list) {
@@ -486,46 +484,3 @@ async function init() {
 init().catch(() => {
   document.body.innerHTML = '<main class="load-error">資料讀取失敗，請確認 assets 資料夾完整。</main>';
 });
-
-// ---- 嵌入用：把頁面高度回報給父層（91APP iframe 自動調高）----
-// 只有被 iframe 嵌入時才啟用；獨立開啟時不做任何事。
-(function setupEmbedAutoHeight() {
-  if (window.parent === window) return;
-
-  let lastHeight = 0;
-
-  function postHeight() {
-    const height = Math.ceil(
-      Math.max(
-        document.documentElement.scrollHeight,
-        document.body ? document.body.scrollHeight : 0,
-      ),
-    );
-    if (height && height !== lastHeight) {
-      lastHeight = height;
-      window.parent.postMessage({ type: "dk-styling-embed:height", height }, "*");
-    }
-  }
-
-  // 直接量一次，再用 rAF 補一次（rAF 在背景分頁／離屏會被節流，兩者並用較穩）。
-  function ping() {
-    postHeight();
-    window.requestAnimationFrame(postHeight);
-  }
-
-  if (typeof ResizeObserver !== "undefined") {
-    new ResizeObserver(ping).observe(document.documentElement);
-  }
-  window.addEventListener("load", ping);
-  window.addEventListener("resize", ping);
-  window.addEventListener("focus", ping);
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) ping();
-  });
-  document.addEventListener("click", () => window.setTimeout(ping, 80));
-  // 保底：圖片延遲載入或字體回流時，仍能補回正確高度。
-  window.setInterval(postHeight, 1000);
-  // 讓 render() 更新畫面後可立即回報高度。
-  window.__dkEmbedPing = ping;
-  ping();
-})();

@@ -32,33 +32,23 @@ python tools/prepare_look_assets.py
 - **線上網址**：https://rhk9003.github.io/dk-styling-game/
 - **Repo**：`rhk9003/dk-styling-game`（public，GitHub Pages 從 `main` 根目錄）
 
-## 嵌入 91APP（iframe 自動高度）
+## 嵌入 91APP（純 iframe，不含 script）
 
-把下面這段貼到 91APP 的自訂 HTML 區塊。iframe 會依內容自動長高（子頁用 `postMessage` 回報高度），不會被裁切或出現內部捲軸。完整示範見 `embed-example.html`。
+把下面這段貼到 91APP 的自訂 HTML 區塊即可。用固定高度 `3200`，是實測手機（360–375px 寬、含鞋型特寫卡）最高約 3167px 再加緩衝，確保結果圖不會被裁切。完整示範見 `embed-example.html`。
 
 ```html
 <iframe
-  id="dk-styling"
   src="https://rhk9003.github.io/dk-styling-game/"
   title="DK AI 穿搭選鞋遊戲"
   style="width:100%;border:0;display:block"
-  height="900"
+  height="3200"
   scrolling="no"
   loading="lazy"
-  allow="clipboard-write"
 ></iframe>
-<script>
-  window.addEventListener("message", function (e) {
-    if (e.origin !== "https://rhk9003.github.io") return;
-    var d = e.data || {};
-    if (d.type === "dk-styling-embed:height" && typeof d.height === "number") {
-      document.getElementById("dk-styling").style.height = d.height + "px";
-    }
-  });
-</script>
 ```
 
-> 若 91APP 的區塊會濾掉 `<script>`，改用固定高度即可：把 iframe 的 `height` 設成 `2850`（足夠顯示結果圖），或改 `scrolling="auto"` 讓使用者在框內捲動。
+> - 固定高度的取捨：使用者「還沒選鞋」時，下方會有一段留白（因為要預留結果圖的高度）。
+> - 想省留白、改成框內捲動：把 `height` 調小（例如 `900`）並改 `scrolling="auto"`，但手機上要注意框內捲動與整頁捲動的體感。
 
 ## 發佈更新
 

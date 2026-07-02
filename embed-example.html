@@ -10,7 +10,7 @@
       h1 { font-size: 1.2rem; }
       p { color: #697177; line-height: 1.6; }
       code { background: #fff; border: 1px solid #dfe6e2; border-radius: 4px; padding: 2px 6px; }
-      /* 嵌入用 iframe：寬度滿版，高度由子頁 postMessage 自動調整 */
+      /* 嵌入用 iframe：寬度滿版、固定高度（不含任何 script） */
       #dk-styling { width: 100%; border: 0; display: block; }
     </style>
   </head>
@@ -18,9 +18,9 @@
     <div class="wrap">
       <h1>DK AI 穿搭選鞋遊戲 — 嵌入預覽</h1>
       <p>
-        下方是實際嵌入效果。把 <code>&lt;iframe&gt;</code> 與後面那段
-        <code>&lt;script&gt;</code> 一起貼到 91APP 的自訂 HTML 區塊即可，
-        iframe 會依內容自動長高，不會出現內部捲軸或被裁切。
+        下方是實際嵌入效果。只要把 <code>&lt;iframe&gt;</code> 這段貼到 91APP 的自訂 HTML
+        區塊即可，<strong>不需要任何 script</strong>。高度用固定的
+        <code>3200</code>（實測手機最高約 3167px 再加緩衝），確保結果圖不會被裁切。
       </p>
 
       <!-- ↓↓↓ 這段就是貼到 91APP 的內容 ↓↓↓ -->
@@ -28,25 +28,17 @@
         id="dk-styling"
         src="https://rhk9003.github.io/dk-styling-game/"
         title="DK AI 穿搭選鞋遊戲"
-        loading="lazy"
+        height="3200"
         scrolling="no"
-        height="900"
-        allow="clipboard-write"
-        referrerpolicy="no-referrer-when-downgrade"
+        loading="lazy"
       ></iframe>
-      <script>
-        (function () {
-          var frame = document.getElementById("dk-styling");
-          window.addEventListener("message", function (event) {
-            if (event.origin !== "https://rhk9003.github.io") return;
-            var data = event.data || {};
-            if (data.type === "dk-styling-embed:height" && typeof data.height === "number") {
-              frame.style.height = data.height + "px";
-            }
-          });
-        })();
-      </script>
       <!-- ↑↑↑ 這段就是貼到 91APP 的內容 ↑↑↑ -->
+
+      <p>
+        取捨：使用者還沒選鞋時，下方會有一段留白（預留結果圖的高度）。若想省留白，
+        可把 <code>height</code> 改小（例如 <code>900</code>）並改 <code>scrolling="auto"</code>，
+        讓使用者在框內捲動。
+      </p>
     </div>
   </body>
 </html>

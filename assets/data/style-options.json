@@ -1,0 +1,35 @@
+{
+  "models": [
+    {
+      "id": "japanese-fresh",
+      "label": "日系清新",
+      "headline": "棉麻、柔色與自然層次，適合清爽日常",
+      "thumb": "assets/looks/japanese-fresh-89-3114-50.webp"
+    },
+    {
+      "id": "korean-minimal",
+      "label": "韓系簡約",
+      "headline": "低飽和線條與俐落比例，乾淨有質感",
+      "thumb": "assets/looks/korean-minimal-89-3114-50.webp"
+    },
+    {
+      "id": "sweet-cool",
+      "label": "甜酷休閒",
+      "headline": "甜感單品配一點俐落，咖啡廳與約會都能成立",
+      "thumb": "assets/looks/sweet-cool-89-3114-50.webp"
+    },
+    {
+      "id": "sporty",
+      "label": "運動感",
+      "headline": "輕戶外、健走與城市散步的舒服穿搭",
+      "thumb": "assets/looks/sporty-89-3114-50.webp"
+    },
+    {
+      "id": "resort",
+      "label": "優雅度假",
+      "headline": "明亮、放鬆、適合旅行和假日散步",
+      "thumb": "assets/looks/resort-65-6025-70.webp"
+    }
+  ],
+  "scenes": []
+}

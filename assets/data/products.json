@@ -1,0 +1,63 @@
+[
+  {
+    "id": "10755462",
+    "code": "89-5160-50",
+    "url": "https://www.dk-shoes.com.tw/SalePage/Index/10755462",
+    "shortName": "經典空氣小白鞋",
+    "color": "白色",
+    "category": "空氣鞋",
+    "price": 3480,
+    "image": "assets/shoes/89-5160-50.webp",
+    "detailImage": "assets/shoe-details/89-5160-50-canonical-correct-fit.webp",
+    "features": [
+      "低軟後跟與可後踩結構",
+      "素面小白鞋外型乾淨好搭",
+      "厚平底與車線細節修飾日常穿搭"
+    ]
+  },
+  {
+    "id": "9021901",
+    "code": "89-3114-50",
+    "url": "https://www.dk-shoes.com.tw/SalePage/Index/9021901",
+    "shortName": "墨白針織氣墊健走鞋",
+    "color": "墨白",
+    "category": "健走鞋",
+    "price": 4680,
+    "image": "assets/shoes/89-3114-50.webp",
+    "features": [
+      "灰白針織紋理有層次",
+      "厚底緩震適合長時間行走",
+      "黑色後拉帶增加運動感"
+    ]
+  },
+  {
+    "id": "11671616",
+    "code": "65-6025-70",
+    "url": "https://www.dk-shoes.com.tw/SalePage/Index/11671616",
+    "shortName": "淺藍交叉帶厚底涼鞋",
+    "color": "淺藍",
+    "category": "涼鞋",
+    "price": 3280,
+    "image": "assets/shoes/65-6025-70.webp",
+    "features": [
+      "交叉寬帶包覆舒適",
+      "厚底楔形比例修飾腿型",
+      "淺藍色系適合春夏清爽穿搭"
+    ]
+  },
+  {
+    "id": "11630288",
+    "code": "63-6089-69",
+    "url": "https://www.dk-shoes.com.tw/SalePage/Index/11630288",
+    "shortName": "灰白網布運動休閒鞋",
+    "color": "灰白",
+    "category": "休閒鞋",
+    "price": 3480,
+    "image": "assets/shoes/63-6089-69.webp",
+    "features": [
+      "銀灰網布帶出輕運動感",
+      "奶油中底與膠色外底更柔和",
+      "適合運動休閒和城市散步"
+    ]
+  }
+]

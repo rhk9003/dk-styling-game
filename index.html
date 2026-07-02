@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DK AI 穿搭選鞋遊戲</title>
+    <meta
+      name="description"
+      content="先選麻豆風格，再選鞋款，產出對應的 DK Shoes AI 穿搭結果圖。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">DK Summer Styling</p>
+        <h1>AI 穿搭選鞋遊戲</h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="button ghost" id="randomizeButton" type="button">隨機搭配</button>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <section class="step-section" aria-labelledby="modelTitle">
+        <div class="section-heading">
+          <p class="step-kicker">Step 1</p>
+          <h2 id="modelTitle">選麻豆風格</h2>
+        </div>
+        <div class="option-grid model-grid" id="modelGrid"></div>
+      </section>
+
+      <section class="step-section" aria-labelledby="shoeTitle">
+        <div class="section-heading">
+          <p class="step-kicker">Step 2</p>
+          <h2 id="shoeTitle">選鞋款</h2>
+        </div>
+        <p class="step-note" id="shoeNote">先選擇麻豆風格，下一步會出現可產出的鞋款。</p>
+        <div class="filter-row" id="categoryFilters" aria-label="鞋款分類"></div>
+        <div class="shoe-grid" id="shoeGrid"></div>
+      </section>
+
+      <section class="result-panel is-empty" id="resultPanel" aria-label="搭配結果">
+        <div class="empty-result" id="emptyResult">
+          <p class="step-kicker">Result</p>
+          <h2>選好麻豆風格與鞋款後，這裡會出現 AI 穿搭結果圖。</h2>
+        </div>
+        <div class="result-panel-inner">
+          <div class="result-header">
+            <div>
+              <p class="step-kicker">Result</p>
+              <h2>搭配結果</h2>
+            </div>
+            <button class="button compact" id="downloadButton" type="button">下載結果</button>
+          </div>
+
+          <div class="look-card" id="lookCard">
+            <img class="generated-look-image" id="resultLookImage" alt="" />
+          </div>
+
+          <div class="look-copy">
+            <p id="resultCombo"></p>
+            <h3 id="resultShoeName"></h3>
+            <p id="resultReason"></p>
+          </div>
+
+          <div class="shoe-detail-card" id="shoeDetailCard" hidden>
+            <div>
+              <p class="summary-label">鞋型特寫</p>
+              <p>此鞋款以商品近景作為鞋型判斷基準。</p>
+            </div>
+            <img id="shoeDetailImage" alt="" />
+          </div>
+
+          <div class="product-summary">
+            <div>
+              <p class="summary-label">對應商品</p>
+              <h3 id="productTitle"></h3>
+              <p id="productMeta"></p>
+            </div>
+            <a class="button primary" id="productLink" href="#" target="_blank" rel="noreferrer">
+              查看商品
+            </a>
+          </div>
+
+          <ul class="feature-list" id="featureList"></ul>
+        </div>
+      </section>
+    </main>
+
+    <canvas id="downloadCanvas" width="1080" height="1600" hidden></canvas>
+    <script src="assets/data/generated-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

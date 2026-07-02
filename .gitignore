@@ -1,0 +1,19 @@
+# 工作/來源檔（非網站內容，不進版控）
+_*.json
+_*.py
+_contact*.jpg
+*.xlsx
+~$*.xlsx
+.claude/
+.DS_Store
+Thumbs.db
+
+# 占卜遊戲殘留檔（此穿搭 App 未使用）
+cards.js
+images/
+output/
+
+# 產圖來源與 log（非網站必要）
+server*.log
+assets/looks/sources/
+assets/generated/sources/

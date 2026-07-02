@@ -27,6 +27,47 @@ python -m http.server 4173 --bind 127.0.0.1
 python tools/prepare_look_assets.py
 ```
 
-## 發佈到 GitHub Pages
+## 線上網址與 Repo
 
-把整個資料夾提交到 GitHub repository，Pages 設定選 `main` branch / root 即可。`app.js` 內有本機 fallback data，即使用 `file://` 打開也能看到基本資料；正式展示仍建議用 HTTP 或 GitHub Pages。
+- **線上網址**：https://rhk9003.github.io/dk-styling-game/
+- **Repo**：`rhk9003/dk-styling-game`（public，GitHub Pages 從 `main` 根目錄）
+
+## 嵌入 91APP（iframe 自動高度）
+
+把下面這段貼到 91APP 的自訂 HTML 區塊。iframe 會依內容自動長高（子頁用 `postMessage` 回報高度），不會被裁切或出現內部捲軸。完整示範見 `embed-example.html`。
+
+```html
+<iframe
+  id="dk-styling"
+  src="https://rhk9003.github.io/dk-styling-game/"
+  title="DK AI 穿搭選鞋遊戲"
+  style="width:100%;border:0;display:block"
+  height="900"
+  scrolling="no"
+  loading="lazy"
+  allow="clipboard-write"
+></iframe>
+<script>
+  window.addEventListener("message", function (e) {
+    if (e.origin !== "https://rhk9003.github.io") return;
+    var d = e.data || {};
+    if (d.type === "dk-styling-embed:height" && typeof d.height === "number") {
+      document.getElementById("dk-styling").style.height = d.height + "px";
+    }
+  });
+</script>
+```
+
+> 若 91APP 的區塊會濾掉 `<script>`，改用固定高度即可：把 iframe 的 `height` 設成 `2850`（足夠顯示結果圖），或改 `scrolling="auto"` 讓使用者在框內捲動。
+
+## 發佈更新
+
+改完內容後於本資料夾執行：
+
+```powershell
+git add -A
+git commit -m "更新內容"
+git push
+```
+
+`app.js` 內含 `assets/data/generated-data.js` 的內嵌 fallback，即使用 `file://` 打開也能看到完整資料；正式展示用 GitHub Pages。

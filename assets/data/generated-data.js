@@ -29,6 +29,18 @@ window.DK_STYLING_DATA = {
       "label": "優雅度假",
       "headline": "明亮、放鬆、適合旅行和假日散步",
       "thumb": "assets/looks/resort-65-6025-70.webp"
+    },
+    {
+      "id": "yoga-active",
+      "label": "瑜珈運動",
+      "headline": "瑜珈後的輕運動穿搭，舒服又俐落",
+      "thumb": "assets/looks/yoga-active-89-3114-50.webp"
+    },
+    {
+      "id": "short-hair-city",
+      "label": "短髮俐落",
+      "headline": "短髮城市感造型，乾淨線條更有個性",
+      "thumb": "assets/looks/short-hair-city-89-3114-50.webp"
     }
   ],
   "products": [
@@ -72,10 +84,11 @@ window.DK_STYLING_DATA = {
       "category": "涼鞋",
       "price": 3280,
       "image": "assets/shoes/65-6025-70.webp",
+      "detailImage": "assets/shoe-details/65-6025-70-canonical-correct-shape.webp",
       "features": [
-        "交叉寬帶包覆舒適",
-        "厚底楔形比例修飾腿型",
-        "淺藍色系適合春夏清爽穿搭"
+        "前掌粗交叉扭結帶與小金扣",
+        "後腳踝魔鬼氈寬帶穩定包覆",
+        "厚底楔形比例修飾腿型"
       ]
     },
     {
@@ -141,6 +154,24 @@ window.DK_STYLING_DATA = {
       "source": "assets/looks/sources/resort-89-5160-50.png"
     },
     {
+      "id": "yoga-active-89-5160-50",
+      "modelId": "yoga-active",
+      "shoeCode": "89-5160-50",
+      "label": "瑜珈運動 x 89-5160-50",
+      "headline": "瑜珈後的輕運動穿搭，把舒服感延伸到日常。",
+      "image": "assets/looks/yoga-active-89-5160-50.webp",
+      "source": "assets/looks/sources/yoga-active-89-5160-50.png"
+    },
+    {
+      "id": "short-hair-city-89-5160-50",
+      "modelId": "short-hair-city",
+      "shoeCode": "89-5160-50",
+      "label": "短髮俐落 x 89-5160-50",
+      "headline": "短髮城市造型更俐落，讓鞋款比例看起來乾淨有精神。",
+      "image": "assets/looks/short-hair-city-89-5160-50.webp",
+      "source": "assets/looks/sources/short-hair-city-89-5160-50.png"
+    },
+    {
       "id": "japanese-fresh-89-3114-50",
       "modelId": "japanese-fresh",
       "shoeCode": "89-3114-50",
@@ -184,6 +215,24 @@ window.DK_STYLING_DATA = {
       "headline": "明亮度假感穿搭，鞋款看起來輕鬆又修飾。",
       "image": "assets/looks/resort-89-3114-50.webp",
       "source": "assets/looks/sources/resort-89-3114-50.png"
+    },
+    {
+      "id": "yoga-active-89-3114-50",
+      "modelId": "yoga-active",
+      "shoeCode": "89-3114-50",
+      "label": "瑜珈運動 x 89-3114-50",
+      "headline": "瑜珈後的輕運動穿搭，把舒服感延伸到日常。",
+      "image": "assets/looks/yoga-active-89-3114-50.webp",
+      "source": "assets/looks/sources/yoga-active-89-3114-50.png"
+    },
+    {
+      "id": "short-hair-city-89-3114-50",
+      "modelId": "short-hair-city",
+      "shoeCode": "89-3114-50",
+      "label": "短髮俐落 x 89-3114-50",
+      "headline": "短髮城市造型更俐落，讓鞋款比例看起來乾淨有精神。",
+      "image": "assets/looks/short-hair-city-89-3114-50.webp",
+      "source": "assets/looks/sources/short-hair-city-89-3114-50.png"
     },
     {
       "id": "japanese-fresh-65-6025-70",
@@ -231,6 +280,24 @@ window.DK_STYLING_DATA = {
       "source": "assets/looks/sources/resort-65-6025-70.png"
     },
     {
+      "id": "yoga-active-65-6025-70",
+      "modelId": "yoga-active",
+      "shoeCode": "65-6025-70",
+      "label": "瑜珈運動 x 65-6025-70",
+      "headline": "瑜珈後的輕運動穿搭，把舒服感延伸到日常。",
+      "image": "assets/looks/yoga-active-65-6025-70.webp",
+      "source": "assets/looks/sources/yoga-active-65-6025-70.png"
+    },
+    {
+      "id": "short-hair-city-65-6025-70",
+      "modelId": "short-hair-city",
+      "shoeCode": "65-6025-70",
+      "label": "短髮俐落 x 65-6025-70",
+      "headline": "短髮城市造型更俐落，讓鞋款比例看起來乾淨有精神。",
+      "image": "assets/looks/short-hair-city-65-6025-70.webp",
+      "source": "assets/looks/sources/short-hair-city-65-6025-70.png"
+    },
+    {
       "id": "japanese-fresh-63-6089-69",
       "modelId": "japanese-fresh",
       "shoeCode": "63-6089-69",
@@ -274,6 +341,24 @@ window.DK_STYLING_DATA = {
       "headline": "明亮度假感穿搭，鞋款看起來輕鬆又修飾。",
       "image": "assets/looks/resort-63-6089-69.webp",
       "source": "assets/looks/sources/resort-63-6089-69.png"
+    },
+    {
+      "id": "yoga-active-63-6089-69",
+      "modelId": "yoga-active",
+      "shoeCode": "63-6089-69",
+      "label": "瑜珈運動 x 63-6089-69",
+      "headline": "瑜珈後的輕運動穿搭，把舒服感延伸到日常。",
+      "image": "assets/looks/yoga-active-63-6089-69.webp",
+      "source": "assets/looks/sources/yoga-active-63-6089-69.png"
+    },
+    {
+      "id": "short-hair-city-63-6089-69",
+      "modelId": "short-hair-city",
+      "shoeCode": "63-6089-69",
+      "label": "短髮俐落 x 63-6089-69",
+      "headline": "短髮城市造型更俐落，讓鞋款比例看起來乾淨有精神。",
+      "image": "assets/looks/short-hair-city-63-6089-69.webp",
+      "source": "assets/looks/sources/short-hair-city-63-6089-69.png"
     }
   ]
 };

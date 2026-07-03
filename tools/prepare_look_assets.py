@@ -40,6 +40,16 @@ MODEL_STYLES = [
         "label": "優雅度假",
         "headline": "明亮、放鬆、適合旅行和假日散步",
     },
+    {
+        "id": "yoga-active",
+        "label": "瑜珈運動",
+        "headline": "瑜珈後的輕運動穿搭，舒服又俐落",
+    },
+    {
+        "id": "short-hair-city",
+        "label": "短髮俐落",
+        "headline": "短髮城市感造型，乾淨線條更有個性",
+    },
 ]
 
 PRODUCTS = [
@@ -83,10 +93,11 @@ PRODUCTS = [
         "category": "涼鞋",
         "price": 3280,
         "image": "assets/shoes/65-6025-70.webp",
+        "detailImage": "assets/shoe-details/65-6025-70-canonical-correct-shape.webp",
         "features": [
-            "交叉寬帶包覆舒適",
+            "前掌粗交叉扭結帶與小金扣",
+            "後腳踝魔鬼氈寬帶穩定包覆",
             "厚底楔形比例修飾腿型",
-            "淺藍色系適合春夏清爽穿搭",
         ],
     },
     {
@@ -112,6 +123,13 @@ HEADLINES = {
     "sweet-cool": "甜感與俐落平衡，讓日常鞋款更有造型。",
     "sporty": "把舒適機能放進城市日常，走路也有型。",
     "resort": "明亮度假感穿搭，鞋款看起來輕鬆又修飾。",
+    "yoga-active": "瑜珈後的輕運動穿搭，把舒服感延伸到日常。",
+    "short-hair-city": "短髮城市造型更俐落，讓鞋款比例看起來乾淨有精神。",
+}
+
+DETAIL_REFERENCES = {
+    "89-5160-50": "89-5160-50-canonical-correct-fit.png",
+    "65-6025-70": "65-6025-70-canonical-correct-shape.png",
 }
 
 
@@ -135,9 +153,10 @@ def main() -> None:
     for old_file in DETAIL_DIR.glob("*.webp"):
         old_file.unlink()
 
-    detail_source = REFERENCE_DIR / "89-5160-50-canonical-correct-fit.png"
-    if detail_source.exists():
-        save_web_image(detail_source, DETAIL_DIR / "89-5160-50-canonical-correct-fit.webp", (1400, 1400))
+    for detail_name in DETAIL_REFERENCES.values():
+        detail_source = REFERENCE_DIR / detail_name
+        if detail_source.exists():
+            save_web_image(detail_source, DETAIL_DIR / detail_source.with_suffix(".webp").name, (1400, 1400))
 
     looks = []
     for product in PRODUCTS:

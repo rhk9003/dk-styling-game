@@ -29,6 +29,18 @@
       "label": "優雅度假",
       "headline": "明亮、放鬆、適合旅行和假日散步",
       "thumb": "assets/looks/resort-65-6025-70.webp"
+    },
+    {
+      "id": "yoga-active",
+      "label": "瑜珈運動",
+      "headline": "瑜珈後的輕運動穿搭，舒服又俐落",
+      "thumb": "assets/looks/yoga-active-89-3114-50.webp"
+    },
+    {
+      "id": "short-hair-city",
+      "label": "短髮俐落",
+      "headline": "短髮城市感造型，乾淨線條更有個性",
+      "thumb": "assets/looks/short-hair-city-89-3114-50.webp"
     }
   ],
   "scenes": []
